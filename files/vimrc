@@ -11,8 +11,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Define '\' as map leader
-let mapleader = '\'
-let g:mapleader = '\'
+let mapleader = ' '
+let g:mapleader = ' '
 
 Plugin 'gmarik/vundle'
 Plugin 'shiroyasha/vim-sane-defaults'
