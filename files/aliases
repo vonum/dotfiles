@@ -22,3 +22,9 @@ alias pr="hub pull-request"
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
 alias ii="iex -S mix"
+
+# python
+alias py2="~/anaconda2/bin/python2.7"
+alias pip2="~/anaconda2/bin/pip"
+alias py3="~/anaconda3/bin/python3.6"
+alias pip3="~/anaconda3/bin/pip"
