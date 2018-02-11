@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'ervandew/supertab'
-Plugin 'vonum/vim-sane-defaults'
 Plugin 'mileszs/ack.vim'
 Plugin 'renderedtext/vim-bdd'
 Plugin 'plasticboy/vim-markdown'
@@ -32,6 +31,7 @@ Plugin 'renderedtext/vim-elixir-alternative-files'
 Plugin 'bogado/file-line'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'vonum/vim-sane-defaults'
 
 " html autocomplete, python, tree view
 
