@@ -1,6 +1,6 @@
 # Dotfiles
 
-Containing:
+Simple dotfiles containing:
 - aliases
 - zshrc
 - vimrc
@@ -8,7 +8,11 @@ Containing:
 - prompt
 - gitconfig
 
-![Shiroyasha dotfiles screenshot](screenshot.jpg)
+### zsh and tmux
+![zsh and tmux](zshtmux.png)
+
+### Vim
+![vim](vim.png)
 
 ### Requirments
 
