@@ -15,6 +15,8 @@ let mapleader = ' '
 let g:mapleader = ' '
 
 Plugin 'gmarik/vundle'
+Plugin 'vim-airline/vim-airline'
+Plugin 'ervandew/supertab'
 Plugin 'shiroyasha/vim-sane-defaults'
 Plugin 'mileszs/ack.vim'
 Plugin 'renderedtext/vim-bdd'
@@ -28,20 +30,17 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimfiler.vim'
-Plugin 'Shougo/neocomplcache.vim'
 Plugin 'thisivan/vim-bufexplorer'
 Plugin 'gregsexton/MatchTag'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-powerline'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'renderedtext/vim-elixir-alternative-files'
 Plugin 'bogado/file-line'
-Plugin 'fatih/vim-go'
-Plugin 'isRuslan/vim-es6'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" html autocomplete, python, tree view
 
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
