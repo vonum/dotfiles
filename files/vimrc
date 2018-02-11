@@ -36,6 +36,9 @@ Plugin 'mxw/vim-jsx'
 
 " html autocomplete, python, tree view
 
+" Define space as map leader (' ')
+let mapleader = ' '
+
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
 
