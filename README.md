@@ -1,6 +1,12 @@
 # Dotfiles
 
-Simple, no bullshit, dotfiles.
+Containing:
+- aliases
+- zshrc
+- vimrc
+- tmux.conf
+- prompt
+- gitconfig
 
 ![Shiroyasha dotfiles screenshot](screenshot.jpg)
 
@@ -13,7 +19,7 @@ Simple, no bullshit, dotfiles.
 ### Installation
 
 ```
-git clone https://github.com/shiroyasha/dotfiles ~/dotfiles
+git clone https://github.com/vonum/dotfiles ~/dotfiles
 
 cd ~/dotfiles
 
