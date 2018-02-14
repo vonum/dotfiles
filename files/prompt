@@ -40,4 +40,4 @@ function prompt_jobs() {
   ((count)) && echo -n " \e[38;5;243m{${count}}"
 }
 
-export PROMPT='$(prompt_start_symbol) $(prompt_directory)$(prompt_jobs) $(prompt_git_branch) $(command_start_symbol)'
+export PROMPT='$(prompt_start_symbol) $(prompt_directory)$(prompt_jobs) $(prompt_git_branch) $(command_start_symbol) '
