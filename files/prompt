@@ -1,36 +1,43 @@
 autoload -Uz colors && colors
 setopt prompt_subst
 
-function prompt_exit_status() {
+PROMPT_SYMBOL="⟩"
+COMMAND_START_SYMBOL="Ξ"
+
+function prompt_start_symbol() {
   if [ $? -eq 0 ]; then
-    echo "%{$fg_bold[green]%}»%{$reset_color%}"
+    echo "%{$fg_bold[magenta]%}$PROMPT_SYMBOL%{$reset_color%}"
   else
-    echo "%{$fg_bold[red]%}»%{$reset_color%}"
+    echo "%{$fg_bold[red]%}$PROMPT_SYMBOL%{$reset_color%}"
   fi
+}
+
+function command_start_symbol() {
+  echo "%{$fg_bold[yellow]%}$COMMAND_START_SYMBOL%{$reset_color%}"
 }
 
 function prompt_git_branch() {
   if [ -e "$PWD/.git" ]; then
     local branch=$(git rev-parse --abbrev-ref HEAD)
 
-    if [[ $(git status) =~ "nothing to commit, working directory clean" ]]; then
-      echo -n "%{$fg_bold[green]%}($branch)%{$reset_color%}"
-    else
-      echo -n "%{$fg_bold[red]%}($branch)%{$reset_color%}"
-    fi
-  fi
+    branch_suffix=""
 
-  echo " "
+    if [[ -z $(git status | grep "nothing to commit") ]]; then
+      branch_suffix="*"
+    fi
+
+    echo -n "\e[38;5;243m$branch$branch_suffix%{$reset_color%}"
+  fi
 }
 
 function prompt_directory() {
-  echo "%{$fg_bold[cyan]%}%c%{$reset_color%}"
+  echo "\e[38;5;42m%c%{$reset_color%}"
 }
 
 function prompt_jobs() {
   count=$( ( jobs ) | wc -l)
 
-  ((count)) && echo -n "{${count} hidden} "
+  ((count)) && echo -n "\e[38;5;243m{${count}} "
 }
 
-export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'
+export PROMPT='$(prompt_start_symbol) $(prompt_directory) $(prompt_jobs)$(prompt_git_branch) $(command_start_symbol) '
