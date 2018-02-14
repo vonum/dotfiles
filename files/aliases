@@ -7,6 +7,7 @@ alias bdb="bundle exec rake db:migrate db:test:prepare"
 alias dot="cd ~/dotfiles && ./install && cd -"
 
 # generic
+alias src="source"
 alias rip="rm -rf"
 alias zz="source ~/.zshrc"
 alias v="vim"
