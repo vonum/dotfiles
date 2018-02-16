@@ -15,6 +15,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.prompt
 source ~/.aliases
 
+# Bindings for auto completion [CTRL + SPACE]
+bindkey '^ ' autosuggest-accept
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
 if [ -d ~/.kerl ]; then
   source ~/.kerl/installs/18.3/activate
   test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
