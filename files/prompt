@@ -4,6 +4,18 @@ setopt prompt_subst
 PROMPT_SYMBOL="⟩"
 COMMAND_START_SYMBOL="Ξ"
 
+GIT_NEW_FILES_ICON="+"
+GIT_MODIFIED_FILES_ICON="∘"
+GIT_REMOVED_FILES_ICON="-"
+
+function is_git_repo() {
+  [ -e "$PWD/.git" ]
+}
+
+function is_clean_git_repo() {
+  [[ ! -z $(git status | grep "nothing to commit") ]]
+}
+
 function prompt_start_symbol() {
   if [ $? -eq 0 ]; then
     echo "%{$fg_bold[magenta]%}$PROMPT_SYMBOL%{$reset_color%}"
@@ -17,12 +29,12 @@ function command_start_symbol() {
 }
 
 function prompt_git_branch() {
-  if [ -e "$PWD/.git" ]; then
+  if is_git_repo; then
     local branch=$(git rev-parse --abbrev-ref HEAD)
 
     branch_suffix=""
 
-    if [[ -z $(git status | grep "nothing to commit") ]]; then
+    if ! is_clean_git_repo then; then
       branch_suffix="*"
     fi
 
@@ -40,4 +52,38 @@ function prompt_jobs() {
   ((count)) && echo -n " \e[38;5;243m{${count}}"
 }
 
+function git_new_files_icon() {
+  if [[ ! -z $(g st | awk '$1 == "??"') ]]; then
+    echo "%{$fg_bold[green]%}$GIT_NEW_FILES_ICON%{$reset_color%}"
+  fi
+}
+
+function git_modified_files_icon() {
+  if [[ ! -z $(g st | awk '$1 == "M"') ]]; then
+    echo "%{$fg_bold[yellow]%}$GIT_MODIFIED_FILES_ICON%{$reset_color%}"
+  fi
+}
+
+function git_removed_files_icon() {
+  if [[ ! -z $(g st | awk '$1 == "D"') ]]; then
+    echo "%{$fg_bold[red]%}$GIT_REMOVED_FILES_ICON%{$reset_color%}"
+  fi
+}
+
+function right_prompt_start() {
+  if ! is_clean_git_repo; then
+    echo "%{$fg_bold[cyan]%}[%{$reset_color%}"
+  fi
+}
+
+function right_prompt_end() {
+  if ! is_clean_git_repo; then
+    echo "%{$fg_bold[cyan]%}]%{$reset_color%}"
+  fi
+}
+
 export PROMPT='$(prompt_start_symbol) $(prompt_directory)$(prompt_jobs) $(prompt_git_branch) $(command_start_symbol) '
+
+if is_git_repo; then
+  export RPROMPT='$(right_prompt_start)$(git_new_files_icon)$(git_modified_files_icon)$(git_removed_files_icon)$(right_prompt_end)'
+fi
