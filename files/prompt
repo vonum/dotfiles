@@ -49,7 +49,7 @@ function prompt_directory() {
 function prompt_jobs() {
   count=$( ( jobs ) | wc -l)
 
-  ((count)) && echo -n " \e[38;5;243m{${count}}"
+  ((count)) && echo -n " \e[38;5;215m{${count}}%{$reset_color%}"
 }
 
 function git_new_files_icon() {
