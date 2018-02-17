@@ -11,13 +11,13 @@ setopt sharehistory      # Share history across terminals
 setopt incappendhistory  # Immediately append to the history file, not just when a term is killed
 setopt autocd            # Change directories without cd
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.prompt
 source ~/.aliases
 
 # Bindings for auto completion [CTRL + SPACE]
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
 
 if [ -d ~/.kerl ]; then
   source ~/.kerl/installs/18.3/activate
