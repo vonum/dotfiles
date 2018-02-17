@@ -82,8 +82,14 @@ function right_prompt_end() {
   fi
 }
 
+function git_files_status() {
+  if is_git_repo; then
+    echo "$(right_prompt_start)$(git_new_files_icon)$(git_modified_files_icon)$(git_removed_files_icon)$(right_prompt_end)"
+  fi
+}
+
 export PROMPT='$(prompt_start_symbol) $(directory)$(background_jobs) $(git_branch) $(command_start_symbol) '
 
 if is_git_repo; then
-  export RPROMPT='$(right_prompt_start)$(git_new_files_icon)$(git_modified_files_icon)$(git_removed_files_icon)$(right_prompt_end)'
+  export RPROMPT='$(git_files_status)'
 fi
