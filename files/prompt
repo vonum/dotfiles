@@ -28,7 +28,7 @@ function command_start_symbol() {
   echo "%F{226}%B$COMMAND_START_SYMBOL%b%f"
 }
 
-function prompt_git_branch() {
+function git_branch() {
   if is_git_repo; then
     local branch=$(git rev-parse --abbrev-ref HEAD)
 
@@ -42,11 +42,11 @@ function prompt_git_branch() {
   fi
 }
 
-function prompt_directory() {
+function directory() {
   echo "%F{42}%B%c%b%f"
 }
 
-function prompt_jobs() {
+function background_jobs() {
   count=$( ( jobs ) | wc -l)
 
   ((count)) && echo -n " %F{215}{${count}}%f"
@@ -82,7 +82,7 @@ function right_prompt_end() {
   fi
 }
 
-export PROMPT='$(prompt_start_symbol) $(prompt_directory)$(prompt_jobs) $(prompt_git_branch) $(command_start_symbol) '
+export PROMPT='$(prompt_start_symbol) $(directory)$(background_jobs) $(git_branch) $(command_start_symbol) '
 
 if is_git_repo; then
   export RPROMPT='$(right_prompt_start)$(git_new_files_icon)$(git_modified_files_icon)$(git_removed_files_icon)$(right_prompt_end)'
