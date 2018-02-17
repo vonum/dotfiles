@@ -17,17 +17,15 @@ function is_clean_git_repo() {
 }
 
 function prompt_start_symbol() {
-  echo "%B"
   if [ $? -eq 0 ]; then
-    echo -n "%F{magenta}$PROMPT_SYMBOL%f"
+    echo -n "%F{135}%B$PROMPT_SYMBOL%b%f"
   else
-    echo -n "%F{red}$PROMPT_SYMBOL%f"
+    echo -n "%F{203}%B$PROMPT_SYMBOL%b%f"
   fi
-  echo "%b"
 }
 
 function command_start_symbol() {
-  echo "%F{yellow}%B$COMMAND_START_SYMBOL%b%f"
+  echo "%F{226}%B$COMMAND_START_SYMBOL%b%f"
 }
 
 function prompt_git_branch() {
@@ -56,31 +54,31 @@ function prompt_jobs() {
 
 function git_new_files_icon() {
   if [[ ! -z $(g st | awk '$1 == "??"') ]]; then
-    echo "%F{green}%B$GIT_NEW_FILES_ICON%b%f"
+    echo "%F{076}%B$GIT_NEW_FILES_ICON%b%f"
   fi
 }
 
 function git_modified_files_icon() {
   if [[ ! -z $(g st | awk '$1 == "M"') ]]; then
-    echo "%F{yellow}%B$GIT_MODIFIED_FILES_ICON%b%f"
+    echo "%F{184}%B$GIT_MODIFIED_FILES_ICON%b%f"
   fi
 }
 
 function git_removed_files_icon() {
   if [[ ! -z $(g st | awk '$1 == "D"') ]]; then
-    echo "%F{red}%B$GIT_REMOVED_FILES_ICON%b%f"
+    echo "%F{196}%B$GIT_REMOVED_FILES_ICON%b%f"
   fi
 }
 
 function right_prompt_start() {
   if ! is_clean_git_repo; then
-    echo "%F{cyan}%B[%b%f"
+    echo "%F{039}%B[%b%f"
   fi
 }
 
 function right_prompt_end() {
   if ! is_clean_git_repo; then
-    echo "%F{cyan}%B]%b%f"
+    echo "%F{039}%B]%b%f"
   fi
 }
 
