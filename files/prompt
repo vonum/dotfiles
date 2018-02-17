@@ -17,15 +17,17 @@ function is_clean_git_repo() {
 }
 
 function prompt_start_symbol() {
+  echo "%B"
   if [ $? -eq 0 ]; then
-    echo "%{$fg_bold[magenta]%}$PROMPT_SYMBOL%{$reset_color%}"
+    echo -n "%F{magenta}$PROMPT_SYMBOL%f"
   else
-    echo "%{$fg_bold[red]%}$PROMPT_SYMBOL%{$reset_color%}"
+    echo -n "%F{red}$PROMPT_SYMBOL%f"
   fi
+  echo "%b"
 }
 
 function command_start_symbol() {
-  echo "%{$fg_bold[yellow]%}$COMMAND_START_SYMBOL%{$reset_color%}"
+  echo "%F{yellow}%B$COMMAND_START_SYMBOL%b%f"
 }
 
 function prompt_git_branch() {
@@ -38,47 +40,47 @@ function prompt_git_branch() {
       branch_suffix="*"
     fi
 
-    echo -n "\e[38;5;243m$branch$branch_suffix%{$reset_color%}"
+    echo -n "%F{243}$branch$branch_suffix%f"
   fi
 }
 
 function prompt_directory() {
-  echo "\e[38;5;42m%c%{$reset_color%}"
+  echo "%F{42}%B%c%b%f"
 }
 
 function prompt_jobs() {
   count=$( ( jobs ) | wc -l)
 
-  ((count)) && echo -n " \e[38;5;215m{${count}}%{$reset_color%}"
+  ((count)) && echo -n " %F{215}{${count}}%f"
 }
 
 function git_new_files_icon() {
   if [[ ! -z $(g st | awk '$1 == "??"') ]]; then
-    echo "%{$fg_bold[green]%}$GIT_NEW_FILES_ICON%{$reset_color%}"
+    echo "%F{green}%B$GIT_NEW_FILES_ICON%b%f"
   fi
 }
 
 function git_modified_files_icon() {
   if [[ ! -z $(g st | awk '$1 == "M"') ]]; then
-    echo "%{$fg_bold[yellow]%}$GIT_MODIFIED_FILES_ICON%{$reset_color%}"
+    echo "%F{yellow}%B$GIT_MODIFIED_FILES_ICON%b%f"
   fi
 }
 
 function git_removed_files_icon() {
   if [[ ! -z $(g st | awk '$1 == "D"') ]]; then
-    echo "%{$fg_bold[red]%}$GIT_REMOVED_FILES_ICON%{$reset_color%}"
+    echo "%F{red}%B$GIT_REMOVED_FILES_ICON%b%f"
   fi
 }
 
 function right_prompt_start() {
   if ! is_clean_git_repo; then
-    echo "%{$fg_bold[cyan]%}[%{$reset_color%}"
+    echo "%F{cyan}%B[%b%f"
   fi
 }
 
 function right_prompt_end() {
   if ! is_clean_git_repo; then
-    echo "%{$fg_bold[cyan]%}]%{$reset_color%}"
+    echo "%F{cyan}%B]%b%f"
   fi
 }
 
