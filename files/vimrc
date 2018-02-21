@@ -93,4 +93,7 @@ augroup end
 " sync clipboards
 set clipboard=unnamedplus
 
+" vim-fugitive syntax
+set syntax=fugitiveblame
+
 nnoremap <silent><leader>ee :!clear && elixir %<cr>
