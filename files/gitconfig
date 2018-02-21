@@ -20,7 +20,7 @@
   ps    = push
   sta   = stash
   stap  = stash apply
-  std   = stash drop
+  stad   = stash drop
   rb    = rebase
   f     = fetch
   undo  = reset --soft HEAD^
