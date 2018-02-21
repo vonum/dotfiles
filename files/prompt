@@ -90,6 +90,4 @@ function git_files_status() {
 
 export PROMPT='$(prompt_start_symbol) $(directory)$(background_jobs) $(git_branch) $(command_start_symbol) '
 
-if is_git_repo; then
-  export RPROMPT='$(git_files_status)'
-fi
+export RPROMPT='$(git_files_status)'
