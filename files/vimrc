@@ -35,13 +35,15 @@ Plugin 'vonum/vim-sane-defaults'
 
 " html autocomplete, python, tree view
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Define space as map leader (' ')
 let mapleader = " "
+
+" Autocompletion settings
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
