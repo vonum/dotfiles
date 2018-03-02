@@ -14,9 +14,9 @@ setopt autocd            # Change directories without cd
 source ~/.prompt
 source ~/.aliases
 
-# Bindings for auto completion [CTRL + SPACE]
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^ ' autosuggest-accept
+bindkey '^ ' autosuggest-accept # CTRL + SPACE
+bindkey '^M' autosuggest-execute # CTRL + ENTER
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
 
 if [ -d ~/.kerl ]; then
