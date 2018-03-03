@@ -12,6 +12,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'mileszs/ack.vim'
 Plugin 'renderedtext/vim-bdd'
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
@@ -24,7 +25,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'thisivan/vim-bufexplorer'
 Plugin 'gregsexton/MatchTag'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'renderedtext/vim-elixir-alternative-files'
@@ -33,14 +33,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'vonum/vim-sane-defaults'
 
-" html autocomplete, python, tree view
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" Define space as map leader (' ')
-let mapleader = " "
 
 " Autocompletion settings
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -60,26 +55,16 @@ nnoremap F :Ack "\b<cword>\b" app lib spec features config<CR>
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 2
-
 " Enable JSX syntax highlight in .js files
 let g:jsx_ext_required = 0
 
 " Tree view depth
 let g:netrw_liststyle = 3
 
-nnoremap <silent><leader>t :call ElixirAlternateFile()<cr>
+" Fugitive colors
+set filetype=fugitiveblame
 
-" Vim Git Gutter
-highlight SignColumn ctermbg=none
-let g:gitgutter_signs = 1            " Activate gutter signs
+nnoremap <silent><leader>t :call ElixirAlternateFile()<CR>
 
 colorscheme desert
 
@@ -90,10 +75,4 @@ augroup MyColors
   autocmd ColorScheme desert hi SpellBad ctermfg=Black ctermbg=Red
 augroup end
 
-" sync clipboards
-set clipboard=unnamedplus
-
-" vim-fugitive syntax
-set syntax=fugitiveblame
-
-nnoremap <silent><leader>ee :!clear && elixir %<cr>
+" nnoremap <silent><leader>ee :!clear && elixir %<CR>
