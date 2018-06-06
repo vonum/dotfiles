@@ -1,14 +1,17 @@
 " Delete empty space from the end of lines on every save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" set up default path
+" Set up default path
 exe "set path=".expand("$PATH")
 
 set title
 set nomodeline
 
-" enable syntax highlighting
+" Enable syntax highlighting
 syntax enable
+
+" Colorscheme
+colorscheme onedark
 set background=dark
 
 " sync clipboards
@@ -17,12 +20,15 @@ set clipboard=unnamedplus
 " Hide annoying E37: No write since last change (add ! to override)
 set hidden
 
+" Font options
+set guifont=Monospace:h15
+
 " Show line numbers
 set number
 set numberwidth=4
 set ruler
 
-" Formatting Options
+" Formatting options
 set wrap      " Soft Wrap in all files
 set linebreak " Maintains the whole words when wrapping
 
@@ -31,7 +37,7 @@ set autoindent
 set cindent
 set smartindent
 
-" Tab Options
+" Tab options
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
