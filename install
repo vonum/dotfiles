@@ -12,9 +12,14 @@ root = File.expand_path(File.dirname(__FILE__))
 dotfiles_path = File.join(root, "files")
 
 files = `ls #{dotfiles_path}`.split - [".", ".."]
+vim_files = `ls #{dotfiles_path}/vim`.split - [".", ".."]
 
 files.each do |file|
   system("ln -sf '#{dotfiles_path}/#{file}' ~/.#{file}")
+end
+
+vim_files.each do |file|
+  system("ln -sf '#{dotfiles_path}/vim/#{file}' ~/.vim/#{file}")
 end
 
 system("ln -sf '#{root}/bin' ~/bin")
