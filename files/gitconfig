@@ -15,12 +15,12 @@
   co    = checkout
   df    = diff
   dfc   = diff --cached
-  lg    = !git --no-pager log --pretty=format:'%C(yellow)%h%Creset %Cgreen(%><(12)%cr%><|(12))%Creset - %s %C(blue)<%an>%Creset' -10
+  lg    = !git --no-pager log --pretty=format:'%C(141 bold)%h%Creset %C(81 bold)(%><(12)%cr%><|(12))%Creset - %s %C(214 bold)<%an>%Creset' -10
   pl    = pull
   ps    = push
   sta   = stash
   stap  = stash apply
-  stad   = stash drop
+  stad  = stash drop
   rb    = rebase
   f     = fetch
   undo  = reset --soft HEAD^
@@ -30,12 +30,32 @@
   amend = !git add -A && git commit --amend --no-edit
   files = diff --name-only origin/master
   bootstrap =!git init . && git add . && git commit -m "Bootstrap"
-  sync = !git pull origin master && git push vonum master
+  sync  = !git pull origin master && git push vonum master
+
+[mycolors]
+  green     = 83
+  cyan      = 51
+  red       = 167
+  yellow    = 191
+  magenta   = 177
+  purple    = 141
+  lightblue = 81
 
 [color]
-  diff   = auto
-  status = auto
-  branch = auto
+  ui = auto
+[color "branch"]
+  current = 83 bold
+  local   = 51 bold
+  remote  = 167 bold
+[color "diff"]
+  meta = 191 bold
+  frag = 177 bold
+  old  = 167 bold
+  new  = 83 bold
+[color "status"]
+  added     = 83 bold
+  changed   = 191 bold
+  untracked = 161 bold
 
 [core]
   editor = vim
