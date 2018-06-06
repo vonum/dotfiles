@@ -123,3 +123,8 @@ augroup fastescape
   au InsertEnter * set timeout
   au InsertLeave * set notimeout
 augroup END
+
+" Override theme colors
+hi Search ctermbg=LightGreen
+hi IncSearch ctermbg=LightGreen
+hi Directory ctermfg=LightCyan
