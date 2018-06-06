@@ -16,7 +16,7 @@ source ~/.aliases
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept # CTRL + SPACE
-bindkey '^M' autosuggest-execute # CTRL + ENTER
+bindkey '^^M' autosuggest-execute # CTRL + ENTER
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
 
 if [ -d ~/.kerl ]; then
