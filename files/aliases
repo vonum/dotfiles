@@ -37,3 +37,6 @@ alias showenv="showvirtualenv"
 alias lsenv="lsvirtualenv"
 alias rmenv="rmvirtualenv"
 alias cpenv="cpvirtualenv"
+
+# jupyter notebook
+alias jup="jupyter notebook"
