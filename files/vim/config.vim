@@ -43,6 +43,12 @@ set tabstop=2
 set softtabstop=2
 set expandtab
 
+" Override default python plugin
+autocmd FileType python setlocal tabstop=2
+autocmd FileType python setlocal shiftwidth=2
+autocmd FileType python setlocal softtabstop=2
+autocmd FileType python setlocal expandtab
+
 " Always show the statusline
 set laststatus=2
 
