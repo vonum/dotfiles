@@ -56,9 +56,9 @@ vmap = =gv
 nnoremap <silent><leader><CR> :nohl<CR>
 
 " Moving by word taking into account camel and snake case
-map w <Plug>CamelCaseMotion_w
-map b <Plug>CamelCaseMotion_b
-map e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
+map ,w <Plug>CamelCaseMotion_w
+map ,b <Plug>CamelCaseMotion_b
+map ,e <Plug>CamelCaseMotion_e
+sunmap ,w
+sunmap ,b
+sunmap ,e
