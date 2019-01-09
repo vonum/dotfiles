@@ -25,6 +25,7 @@
   rb    = rebase
   f     = fetch
   undo  = reset --soft HEAD^
+  redo  = git reset 'HEAD@{1}'
   count = !git shortlog -sne
   up    = !git checkout master && git pull && git checkout -
   purge = !git checkout master && git branch | grep -v "master" | xargs git branch -D
