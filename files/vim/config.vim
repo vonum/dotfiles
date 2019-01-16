@@ -11,7 +11,7 @@ set nomodeline
 syntax enable
 
 " Colorscheme
-colorscheme onedark
+colorscheme palenight
 set background=dark
 
 " sync clipboards

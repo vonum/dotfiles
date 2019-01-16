@@ -24,3 +24,8 @@ let g:netrw_liststyle = 3
 
 " Fugitive colors
 set filetype=fugitiveblame
+
+" Python syntax highlighting
+let g:python_highlight_string_templates = 1
+let g:python_highlight_indent_errors = 1
+let g:python_highlight_class_vars = 1
