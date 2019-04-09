@@ -29,6 +29,7 @@ alias py2="~/anaconda2/bin/python2.7"
 alias pip2="~/anaconda2/bin/pip"
 alias py3="~/anaconda3/bin/python3.6"
 alias pip3="~/anaconda3/bin/pip"
+alias pipi="pip install -r requirements.txt"
 
 # virtualenvwrapper
 alias workenv="workon"
