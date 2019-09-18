@@ -134,3 +134,6 @@ augroup END
 hi Search ctermbg=LightGreen
 hi IncSearch ctermbg=LightGreen
 hi Directory ctermfg=LightCyan
+
+" DVC
+autocmd! BufNewFile,BufRead Dvcfile,*.dvc setfiletype yaml

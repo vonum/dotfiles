@@ -8,7 +8,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)|deps|_build|vendor$'
 
 " Ack vim
-let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir={vendor,.git}"
+let g:ackprg="ack -H --nocolor --nogroup --column --ignore-dir={vendor,.git}"
 
 " Search word under cursor
 " nnoremap F :Ack "\b<cword>\b" app lib spec features config<CR>
