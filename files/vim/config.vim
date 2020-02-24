@@ -137,3 +137,6 @@ hi Directory ctermfg=LightCyan
 
 " DVC
 autocmd! BufNewFile,BufRead Dvcfile,*.dvc setfiletype yaml
+
+" Semshi colors
+hi semshiSelf ctermfg=249 guifg=#b2b2b2

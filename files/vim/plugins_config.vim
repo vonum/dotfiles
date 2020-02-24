@@ -8,7 +8,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)|deps|_build|vendor$'
 
 " Ack vim
-let g:ackprg="ack -H --nocolor --nogroup --column --ignore-dir={vendor,.git}"
+let g:ackprg = "ack -H --nocolor --nogroup --column --ignore-dir={vendor,.git}"
 
 " Search word under cursor
 " nnoremap F :Ack "\b<cword>\b" app lib spec features config<CR>
@@ -26,6 +26,10 @@ let g:netrw_liststyle = 3
 set filetype=fugitiveblame
 
 " Python syntax highlighting
+let g:semshi#mark_selected_nodes = 0
+let g:semshi#simplify_markup = 1
+let g:semshi#excluded_hl_groups = ['local', 'unresolved']
+
 let g:python_highlight_string_templates = 1
 let g:python_highlight_indent_errors = 1
 let g:python_highlight_class_vars = 1

@@ -39,6 +39,8 @@ nnoremap <silent><leader>s :A<CR>
 nnoremap <silent><leader>S :AV<CR>
 " Open test file for elixir
 nnoremap <silent><leader>t :call ElixirAlternateFile()<CR>
+" Open test file for python
+nnoremap <silent><leader>pa :PA<CR><CR>
 
 " Splits
 nnoremap <silent><leader>v :vs<CR>
@@ -62,3 +64,11 @@ map ,e <Plug>CamelCaseMotion_e
 sunmap ,w
 sunmap ,b
 sunmap ,e
+
+" Moving by python class | function | name
+nmap <silent> <leader>gn :Semshi goto name next<CR>
+nmap <silent> <leader>gN :Semshi goto name prev<CR>
+nmap <silent> <leader>gc :Semshi goto class next<CR>
+nmap <silent> <leader>gC :Semshi goto class prev<CR>
+nmap <silent> <leader>gf :Semshi goto function next<CR>
+nmap <silent> <leader>gF :Semshi goto function prev<CR>

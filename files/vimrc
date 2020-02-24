@@ -28,15 +28,16 @@ Plugin 'gregsexton/MatchTag'
 Plugin 'kien/ctrlp.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'renderedtext/vim-elixir-alternative-files'
+Plugin 'vonum/vim-python-alternative-files'
 Plugin 'bogado/file-line'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'vim-python/python-syntax'
 Plugin 'szymonmaszke/vimpyter'
 Plugin 'mattn/emmet-vim'
+Plugin 'numirias/semshi'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
