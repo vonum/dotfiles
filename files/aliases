@@ -31,6 +31,7 @@ alias py3="~/anaconda3/bin/python3.6"
 alias pip3="~/anaconda3/bin/pip"
 alias pipi="pip install -r requirements.txt"
 alias pipf="pip freeze > requirements.txt"
+alias pipu="pip install --upgrade pip"
 
 # virtualenvwrapper
 alias workenv="workon"
@@ -43,3 +44,9 @@ alias cpenv="cpvirtualenv"
 
 # jupyter notebook
 alias jup="jupyter notebook"
+
+# airflow
+alias airls="airflow list_dags"
+alias airtrig="airflow trigger_dag"
+alias airsrv="airflow webserver -p 3000"
+alias airsch="airflow scheduler"
