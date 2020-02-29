@@ -39,10 +39,14 @@ if [ -d $HOME/go-code ]; then
   export PATH=$HOME/go-code/bin:$PATH
 fi
 
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+if [ -d $HOME/.nvm ]; then
+  export NVM_DIR=$HOME/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+fi
 
-export PATH=$HOME/anaconda3/bin:$PATH
+if [ -d $HOME/anaconda3/bin ]; then
+  export PATH=$PATH:$HOME/anaconda3/bin
+fi
 
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=$HOME/anaconda3/bin/python
