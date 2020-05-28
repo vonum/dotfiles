@@ -75,7 +75,7 @@ set sidescrolloff=20
 set scrolljump=10
 
 set showcmd
-set diffopt+=context:3
+set diffopt=context:3
 
 " Disable backups and swap files
 set nobackup

@@ -1,12 +1,10 @@
 #!/usr/bin/env ruby
 
-#
 # Create symlinks from files -> home directory
 #
 # for example:
 #
 # files/vimrc -> ~/.vimrc
-#
 
 root = File.expand_path(File.dirname(__FILE__))
 dotfiles_path = File.join(root, "files")
