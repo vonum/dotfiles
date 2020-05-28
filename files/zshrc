@@ -68,15 +68,19 @@ SPACESHIP_PROMPT_ORDER=(
   host
   dir
   git
+  docker
+  kubectl
   ruby
   elixir
   julia
   venv
   pyenv
-  line_sep
   jobs
+  line_sep
   char
 )
+
+export SPACESHIP_JOBS_COLOR="yellow"
 
 export ZSH=$HOME/.oh-my-zsh
 source ~/.aliases
