@@ -19,6 +19,8 @@ alias password="openssl rand -base64 32"
 alias code="cd ~/code"
 alias pr="hub pull-request"
 alias kek="echo 'kek'"
+alias dc="docker-compose"
+alias k="kubectl"
 
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
