@@ -16,10 +16,13 @@ setopt incappendhistory  # Immediately append to the history file, not just when
 setopt autocd            # Change directories without cd
 setopt rmstarsilent
 
+source <(kubectl completion zsh)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept # CTRL + SPACE
 bindkey '^^M' autosuggest-execute # CTRL + ENTER
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
+
+if [ "$TMUX" = "" ]; then tmux; fi
 
 if [ -d $HOME/bin ]; then
   export PATH=$PATH:$HOME/bin
