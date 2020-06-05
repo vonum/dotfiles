@@ -1,5 +1,6 @@
 plugins=(git)
 
+export ZSH=$HOME/.oh-my-zsh
 export EDITOR="vim"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -16,7 +17,6 @@ setopt incappendhistory  # Immediately append to the history file, not just when
 setopt autocd            # Change directories without cd
 setopt rmstarsilent
 
-source <(kubectl completion zsh)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept # CTRL + SPACE
 bindkey '^^M' autosuggest-execute # CTRL + ENTER
@@ -64,6 +64,6 @@ SPACESHIP_PROMPT_ORDER=(
 
 export SPACESHIP_JOBS_COLOR="yellow"
 
-export ZSH=$HOME/.oh-my-zsh
 source ~/.aliases
 source $ZSH/oh-my-zsh.sh
+source <(kubectl completion zsh)
