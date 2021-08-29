@@ -35,7 +35,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'szymonmaszke/vimpyter'
 Plugin 'mattn/emmet-vim'
 Plugin 'TovarishFin/vim-solidity'
 

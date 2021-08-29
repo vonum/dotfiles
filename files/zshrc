@@ -15,7 +15,6 @@ setopt incappendhistory  # Immediately append to the history file, not just when
 setopt autocd            # Change directories without cd
 setopt rmstarsilent
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept # CTRL + SPACE
 bindkey '^^M' autosuggest-execute # CTRL + ENTER
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
@@ -37,13 +36,17 @@ fi
 export PATH=$PATH:$HOME/.local/bin
 
 # virtualenvwrapper
-# export VIRTUALENVWRAPPER_PYTHON=$HOME/anaconda3/bin/python
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/Envs
-source $HOME/.local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/Library/Python/3.8/bin/virtualenv
+source $HOME/Library/Python/3.8/bin/virtualenvwrapper.sh
 
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
+
+plugins=(
+  zsh-autosuggestions
+)
 
 SPACESHIP_PROMPT_ORDER=(
   time
@@ -65,9 +68,6 @@ SPACESHIP_PROMPT_ORDER=(
 
 export SPACESHIP_JOBS_COLOR="yellow"
 export LESS="FRX"
-
-export PATH=/usr/local/cuda-11.0/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64:$LD_LIBRARY_PATH
 
 source ~/.aliases
 source $ZSH/oh-my-zsh.sh
