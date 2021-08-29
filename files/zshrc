@@ -50,6 +50,8 @@ ssh-add ~/.ssh/id_rsa
 
 plugins=(
   zsh-autosuggestions
+  docker
+  docker-compose
 )
 
 SPACESHIP_PROMPT_ORDER=(
