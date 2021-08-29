@@ -15,7 +15,7 @@ colorscheme palenight
 set background=dark
 
 " sync clipboards
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Hide annoying E37: No write since last change (add ! to override)
 set hidden
