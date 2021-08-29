@@ -34,10 +34,13 @@ if [ -d $HOME/anaconda3/bin ]; then
   export PATH=$PATH:$HOME/anaconda3/bin
 fi
 
+export PATH=$PATH:$HOME/.local/bin
+
 # virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=$HOME/anaconda3/bin/python
+# export VIRTUALENVWRAPPER_PYTHON=$HOME/anaconda3/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/Envs
-source $HOME/anaconda3/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
@@ -63,6 +66,15 @@ SPACESHIP_PROMPT_ORDER=(
 export SPACESHIP_JOBS_COLOR="yellow"
 export LESS="FRX"
 
+export PATH=/usr/local/cuda-11.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64:$LD_LIBRARY_PATH
+
 source ~/.aliases
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/vonum/google-cloud-sdk/path.zsh.inc' ]; then . '/home/vonum/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/vonum/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/vonum/google-cloud-sdk/completion.zsh.inc'; fi
