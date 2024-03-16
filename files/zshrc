@@ -43,12 +43,6 @@ fi
 
 export PATH=$PATH:$HOME/.local/bin
 
-# virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=$HOME/Envs
-export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/Library/Python/3.8/bin/virtualenv
-source $HOME/Library/Python/3.8/bin/virtualenvwrapper.sh
-
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
 
