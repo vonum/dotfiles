@@ -7,6 +7,7 @@ alias bdb="bundle exec rake db:migrate db:test:prepare"
 alias dot="cd ~/dotfiles && ./install && cd -"
 
 # generic
+alias timeout="gtimeout"
 alias src="source"
 alias rip="rm -rf"
 alias zz="source ~/.zshrc"
@@ -23,6 +24,7 @@ alias dc="docker-compose"
 alias k="kubectl"
 alias clip="xclip -selection c"
 alias pp="python -m json.tool"
+alias poet="poetry run"
 
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
@@ -50,3 +52,15 @@ alias airls="airflow list_dags"
 alias airtrig="airflow trigger_dag"
 alias airsrv="airflow webserver -p 3000"
 alias airsch="airflow scheduler"
+
+alias tf="terraform"
+
+## hardhat
+alias hh="npx hardhat"
+
+## orus
+alias orus="cd ~/code/orus"
+alias orusjobs="cd ~/code/orus/jobs"
+alias orusapi="cd ~/code/orus/orus-api"
+alias orusmeta="cd ~/code/orus/metadata-api"
+alias orusinflux="cd ~/code/orus/local-influx"

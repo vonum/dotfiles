@@ -9,6 +9,7 @@ set nomodeline
 
 " Enable syntax highlighting
 syntax enable
+set re=0
 
 " Colorscheme
 colorscheme palenight
@@ -42,6 +43,9 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set expandtab
+
+" Don't override cursor
+set guicursor=
 
 " Override default python plugin
 autocmd FileType python setlocal tabstop=2
