@@ -65,10 +65,10 @@ sunmap ,w
 sunmap ,b
 sunmap ,e
 
-" Moving by python class | function | name
-nmap <silent> <leader>gn :Semshi goto name next<CR>
-nmap <silent> <leader>gN :Semshi goto name prev<CR>
-nmap <silent> <leader>gc :Semshi goto class next<CR>
-nmap <silent> <leader>gC :Semshi goto class prev<CR>
-nmap <silent> <leader>gf :Semshi goto function next<CR>
-nmap <silent> <leader>gF :Semshi goto function prev<CR>
+" Git
+nnoremap <silent><leader>g :Git blame<CR>
+nnoremap <silent><leader>df :GitGutterSignsToggle<CR>
+
+" Testing
+nnoremap <silent><leader>; :TestNearest<CR>
+nnoremap <silent><leader>' :TestFile<CR>

@@ -8,17 +8,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" General
 Plugin 'vim-airline/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'mileszs/ack.vim'
-Plugin 'renderedtext/vim-bdd'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
@@ -26,20 +21,29 @@ Plugin 'tpope/vim-commentary'
 Plugin 'thisivan/vim-bufexplorer'
 Plugin 'gregsexton/MatchTag'
 Plugin 'kien/ctrlp.vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'renderedtext/vim-elixir-alternative-files'
-Plugin 'vonum/vim-python-alternative-files'
 Plugin 'bogado/file-line'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'bkad/CamelCaseMotion'
-Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'mattn/emmet-vim'
+
+" Appearance
+Plugin 'flazz/vim-colorschemes'
+Plugin 'drewtempelmeyer/palenight.vim'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" Language support
+Plugin 'plasticboy/vim-markdown'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'rust-lang/rust.vim'
 Plugin 'TovarishFin/vim-solidity'
 Plugin 'hashivim/vim-terraform'
-Plugin 'fatih/vim-go'
-Plugin 'rust-lang/rust.vim'
+
+" Tests
+Plugin 'janko/vim-test'
+Plugin 'renderedtext/vim-elixir-alternative-files'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

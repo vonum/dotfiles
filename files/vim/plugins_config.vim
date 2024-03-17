@@ -16,20 +16,15 @@ let g:ackprg = "ack -H --nocolor --nogroup --column --ignore-dir={vendor,.git}"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
-" Enable JSX syntax highlight in .js files
-let g:jsx_ext_required = 0
-
 " Tree view depth
 let g:netrw_liststyle = 3
 
+" Test runners
+let test#strategy = "basic"
+let test#python#runner = 'pytest'
+
+" Git
+let g:gitgutter_signs = 0
+
 " Fugitive colors
 set filetype=fugitiveblame
-
-" Python syntax highlighting
-let g:semshi#mark_selected_nodes = 0
-let g:semshi#simplify_markup = 1
-let g:semshi#excluded_hl_groups = ['local', 'unresolved']
-
-let g:python_highlight_string_templates = 1
-let g:python_highlight_indent_errors = 1
-let g:python_highlight_class_vars = 1
