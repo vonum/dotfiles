@@ -39,8 +39,6 @@ nnoremap <silent><leader>s :A<CR>
 nnoremap <silent><leader>S :AV<CR>
 " Open test file for elixir
 nnoremap <silent><leader>t :call ElixirAlternateFile()<CR>
-" Open test file for python
-nnoremap <silent><leader>pa :PA<CR><CR>
 
 " Splits
 nnoremap <silent><leader>v :vs<CR>
