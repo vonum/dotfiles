@@ -24,7 +24,7 @@ nnoremap <silent><leader>x :x<CR>
 nnoremap <silent><leader>Q :qa!<CR>
 nnoremap <silent><leader>W :wa!<CR>
 nnoremap <silent><leader>X :xa<CR>
-nnoremap <silent><leader>1 :source ~/.vimrc \| :PluginInstall<CR>
+nnoremap <silent><leader>1 :source ~/.vimrc \| :PlugInstall<CR>
 
 " Extra <CR> is for disabling /"Press ENTER or type command to continue/"
 nnoremap <silent><leader>e :Exp<CR><CR>

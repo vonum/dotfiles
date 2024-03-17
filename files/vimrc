@@ -1,52 +1,49 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" set the runtime path to include Plug and initialize
+call plug#begin('~/.vim/plugged')
 
 " General
-Plugin 'vim-airline/vim-airline'
-Plugin 'ervandew/supertab'
-Plugin 'mileszs/ack.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
-Plugin 'thisivan/vim-bufexplorer'
-Plugin 'gregsexton/MatchTag'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bogado/file-line'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'mattn/emmet-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'mileszs/ack.vim'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'thisivan/vim-bufexplorer'
+Plug 'gregsexton/MatchTag'
+Plug 'kien/ctrlp.vim'
+Plug 'bogado/file-line'
+Plug 'bkad/CamelCaseMotion'
+Plug 'mattn/emmet-vim'
 
 " Appearance
-Plugin 'flazz/vim-colorschemes'
-Plugin 'drewtempelmeyer/palenight.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Language support
-Plugin 'plasticboy/vim-markdown'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'rust-lang/rust.vim'
-Plugin 'TovarishFin/vim-solidity'
-Plugin 'hashivim/vim-terraform'
+Plug 'plasticboy/vim-markdown'
+Plug 'pangloss/vim-javascript'
+Plug 'elixir-lang/vim-elixir'
+Plug 'rust-lang/rust.vim'
+Plug 'TovarishFin/vim-solidity'
+Plug 'hashivim/vim-terraform'
 
 " Tests
-Plugin 'janko/vim-test'
-Plugin 'renderedtext/vim-elixir-alternative-files'
+Plug 'janko/vim-test'
+Plug 'renderedtext/vim-elixir-alternative-files'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end() " required
+
 filetype plugin indent on    " required
 filetype plugin on
 
