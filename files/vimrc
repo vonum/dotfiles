@@ -5,6 +5,8 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 " General
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'vim-airline/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'mileszs/ack.vim'
@@ -14,7 +16,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'thisivan/vim-bufexplorer'
 Plug 'gregsexton/MatchTag'
 Plug 'kien/ctrlp.vim'
 Plug 'bogado/file-line'
@@ -44,8 +45,17 @@ Plug 'renderedtext/vim-elixir-alternative-files'
 " All of your Plugins must be added before the following line
 call plug#end() " required
 
-filetype plugin indent on    " required
+filetype plugin indent on " required
 filetype plugin on
+
+" nvim-tree
+lua << EOF
+  vim.g.loaded_netrw = 1
+  vim.g.loaded_netrwPlugin = 1
+  vim.opt.list = true
+
+  require("nvim-tree").setup()
+EOF
 
 source ~/.vim/mappings.vim
 source ~/.vim/config.vim
