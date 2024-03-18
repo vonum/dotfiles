@@ -1,8 +1,3 @@
-# rails
-alias be="bundle exec"
-alias bi="bundle install --path vendor/bundle"
-alias bdb="bundle exec rake db:migrate db:test:prepare"
-
 # dotfiles
 alias dot="cd ~/dotfiles && ./install && cd -"
 
@@ -12,6 +7,7 @@ alias src="source"
 alias rip="rm -rf"
 alias zz="source ~/.zshrc"
 alias v="vim"
+alias nv="vim"
 alias g="git"
 alias ls="ls"
 alias ll="ls -lah"
@@ -30,32 +26,10 @@ alias poet="poetry run"
 alias mmm="mix deps.get && mix deps.compile"
 alias ii="iex -S mix"
 
-# python
-alias pipi="pip install -r requirements.txt"
-alias pipf="pip freeze > requirements.txt"
-alias pipu="pip install --upgrade pip"
-
-# virtualenvwrapper
-alias workenv="workon"
-alias dcenv="deactivate"
-alias mkenv="mkvirtualenv"
-alias showenv="showvirtualenv"
-alias lsenv="lsvirtualenv"
-alias rmenv="rmvirtualenv"
-alias cpenv="cpvirtualenv"
-
 # jupyter notebook
 alias jup="jupyter notebook"
 
-# airflow
-alias airls="airflow list_dags"
-alias airtrig="airflow trigger_dag"
-alias airsrv="airflow webserver -p 3000"
-alias airsch="airflow scheduler"
-
 alias tf="terraform"
-
-## hardhat
 alias hh="npx hardhat"
 
 ## orus
