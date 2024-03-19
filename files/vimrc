@@ -23,8 +23,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'mattn/emmet-vim'
 
 " Appearance
-Plug 'flazz/vim-colorschemes'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'EdenEast/nightfox.nvim' " Vim-Plug
 
 " Git
 Plug 'tpope/vim-fugitive'

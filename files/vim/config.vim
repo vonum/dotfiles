@@ -5,7 +5,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 exe "set path=".expand("$PATH")
 
 " Colorscheme
-colorscheme palenight
+colorscheme nightfox
 set background=dark
 " Override theme colors
 hi Search ctermbg=LightGreen
