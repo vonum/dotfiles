@@ -17,7 +17,7 @@ set number
 set nomodeline
 
 " Don't override cursor
-set guicursor=
+set guicursor=a:ver25
 
 " Always show the statusline
 set laststatus=2

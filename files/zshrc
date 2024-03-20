@@ -29,6 +29,9 @@ if [ -d $HOME/.gem.ruby/2.3.0 ]; then
   export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 fi
 
+export GOPATH=$HOME/go/bin
+export PATH=$PATH:/$HOME/go/bin
+
 export PATH=$PATH:$HOME/.local/bin
 
 # The next line updates PATH for the Google Cloud SDK.
