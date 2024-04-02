@@ -22,8 +22,11 @@ set guicursor=a:ver25
 " Always show the statusline
 set laststatus=2
 
-" sync clipboards
+" Sync clipboards
 set clipboard=unnamed
+
+" Don't change mouse settings
+set mouse=
 
 " Formatting options
 set wrap      " Soft Wrap in all files

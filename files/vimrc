@@ -16,17 +16,21 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 
+" File search
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
+
 " General
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'vim-airline/vim-airline'
 Plug 'mileszs/ack.vim'
-Plug 'kien/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'bkad/CamelCaseMotion'
+Plug 'jlanzarotta/bufexplorer'
 
 " Appearance
 Plug 'EdenEast/nightfox.nvim'
@@ -60,6 +64,15 @@ lua << EOF
   vim.opt.list = true
 
   require("nvim-tree").setup()
+  require("telescope").setup {
+    defaults = {
+      file_ignore_patterns = {
+        ".git/",
+        "node_modules/",
+        "__pycache__/*"
+      }
+    }
+  }
 
   -- setup autocomplete
   -- setup lspconfig
