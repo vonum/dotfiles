@@ -5,23 +5,24 @@ Simple dotfiles containing:
 - zshrc
 - vimrc
 - tmux.conf
-- prompt
 - gitconfig
 
 ### zsh and tmux
 ![zsh and tmux](zshtmux.png)
 
-### Vim
-![vim](vim.png)
+### Neovim
+![nvim startup](nvim-startup.png)
+![nvim](nvim.png)
+![nvim ff](nvim-ff.png)
 
 ### Requirments
-
 - zsh
-- vundle
+- ohmyzsh
+- spaceship prompt
 - tmux
+- nvim
 
 ### Installation
-
 ```
 git clone https://github.com/vonum/dotfiles ~/dotfiles
 
