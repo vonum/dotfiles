@@ -8,7 +8,7 @@ Simple dotfiles containing:
 - gitconfig
 
 ### zsh and tmux
-![zsh and tmux](zshtmux.png)
+![zsh and zellij](zsh.png)
 
 ### Neovim
 ![nvim startup](nvim-startup.png)
