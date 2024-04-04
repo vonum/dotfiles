@@ -5,8 +5,6 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:vim_markdown_folding_disabled = 1
 
 " Search
-" CTRLP
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)|deps|_build|vendor|node_modules|target|__pycache__$'
 " Ack
 let g:ackprg = "ack -H --nocolor --nogroup --column --ignore-dir={vendor,.git,node_modules,debug,target}"
 
@@ -15,9 +13,6 @@ let g:ackprg = "ack -H --nocolor --nogroup --column --ignore-dir={vendor,.git,no
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
-
-" Tree view depth
-let g:netrw_liststyle = 3
 
 " Test runners
 let test#strategy = "basic"

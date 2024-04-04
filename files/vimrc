@@ -31,7 +31,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'bkad/CamelCaseMotion'
-Plug 'jlanzarotta/bufexplorer'
 
 " Appearance
 Plug 'EdenEast/nightfox.nvim'
@@ -134,7 +133,7 @@ lua << EOF
   -- setup lspconfig
   require("mason").setup()
   require("mason-lspconfig").setup({
-    ensure_installed = { "pyright", "rust_analyzer", "tsserver", "rubocop", "solc" },
+    ensure_installed = { "pyright", "rust_analyzer", "tsserver", "rubocop", "solc", "marksman" },
   })
 
   local lspconfig = require('lspconfig')
@@ -148,6 +147,7 @@ lua << EOF
   lspconfig.solc.setup({ capabilities = lsp_capabilities, })
   lspconfig.rubocop.setup({ capabilities = lsp_capabilities, })
   lspconfig.tsserver.setup({ capabilities = lsp_capabilities, })
+  lspconfig.marksman.setup({ capabilities = lsp_capabilities, })
 
   vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
   require('luasnip.loaders.from_vscode').lazy_load()

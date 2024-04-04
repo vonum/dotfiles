@@ -24,8 +24,6 @@ nnoremap <silent><leader>e :NvimTreeToggle<CR>
 
 " Switch to alternate file
 nnoremap <leader><leader> <c-^>
-" Open Buffer
-nnoremap <silent><leader>l :BufExplorer<CR>
 " Open test file for the current file
 nnoremap <silent><leader>s :A<CR>
 " Open test file for the current file in a vertical window
