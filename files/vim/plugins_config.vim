@@ -24,3 +24,5 @@ let g:gitgutter_signs = 0
 
 " Fugitive colors
 set filetype=fugitiveblame
+
+hi NvimTreeNormal guibg=NONE ctermbg=NONE

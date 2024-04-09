@@ -31,6 +31,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'bkad/CamelCaseMotion'
+Plug 'bkad/CamelCaseMotion'
+Plug 'xiyaowong/transparent.nvim'
 
 " Appearance
 Plug 'EdenEast/nightfox.nvim'
