@@ -70,3 +70,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Toggle transparency
 nnoremap <leader>bg :TransparentToggle<cr>
+nnoremap <leader>gD :lua vim.lsp.buf.declaration()<cr>
+nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
+nnoremap <leader>gi :lua vim.lsp.buf.implementation()<cr>
+nnoremap <leader>gt :lua vim.lsp.buf.type_definition()<cr>
+nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
+nnoremap <leader>ai :lua vim.lsp.buf.incoming_calls()<cr>
+nnoremap <leader>ao :lua vim.lsp.buf.outgoing_calls()<cr>
+nnoremap <leader>ar :lua vim.lsp.buf.rename()<cr>

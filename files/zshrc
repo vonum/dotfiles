@@ -29,16 +29,20 @@ if [ -d $HOME/.gem.ruby/2.3.0 ]; then
   export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 fi
 
-export GOPATH=$HOME/go/bin
+export GOPATH=$HOME/go
 export PATH=$PATH:/$HOME/go/bin
 
 export PATH=$PATH:$HOME/.local/bin
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/vonum/google-cloud-sdk/path.zsh.inc' ]; then . '/home/vonum/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/vonum/google-cloud-sdk/path.zsh.inc' ]; then .
+  '/home/vonum/google-cloud-sdk/path.zsh.inc';
+fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/vonum/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/vonum/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/vonum/google-cloud-sdk/completion.zsh.inc' ];
+  then . '/home/vonum/google-cloud-sdk/completion.zsh.inc';
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -67,6 +71,7 @@ SPACESHIP_PROMPT_ORDER=(
   git
   docker
   kubectl
+  golang
   ruby
   elixir
   julia

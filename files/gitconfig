@@ -60,7 +60,7 @@
   untracked = 161 bold
 
 [core]
-  editor = vim
+  editor = nvim
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
