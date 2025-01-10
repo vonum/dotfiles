@@ -1,6 +1,3 @@
-" Autocompletion settings
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
 

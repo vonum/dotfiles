@@ -6,11 +6,11 @@
 #
 # files/vimrc -> ~/.vimrc
 
-root = File.expand_path(File.dirname(__FILE__))
-dotfiles_path = File.join(root, "files")
+root = File.expand_path(File.dirname(__dir__))
+dotfiles_path = File.join(root, 'files')
 
-files = `ls #{dotfiles_path}`.split - [".", ".."]
-vim_files = `ls #{dotfiles_path}/vim`.split - [".", ".."]
+files = `ls #{dotfiles_path}`.split - ['.', '..']
+vim_files = `ls #{dotfiles_path}/vim`.split - ['.', '..']
 
 files.each do |file|
   system("ln -sf '#{dotfiles_path}/#{file}' ~/.#{file}")

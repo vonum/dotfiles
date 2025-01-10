@@ -78,3 +78,4 @@ nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
 nnoremap <leader>ai :lua vim.lsp.buf.incoming_calls()<cr>
 nnoremap <leader>ao :lua vim.lsp.buf.outgoing_calls()<cr>
 nnoremap <leader>ar :lua vim.lsp.buf.rename()<cr>
+nnoremap <leader>gh :lua vim.lsp.buf.hover()<cr>

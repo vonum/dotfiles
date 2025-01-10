@@ -31,7 +31,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'bkad/CamelCaseMotion'
-Plug 'bkad/CamelCaseMotion'
 Plug 'xiyaowong/transparent.nvim'
 
 " Appearance
@@ -42,6 +41,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Language support
+" Not needed?
 Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'elixir-lang/vim-elixir'
@@ -135,13 +135,21 @@ lua << EOF
   -- setup lspconfig
   require("mason").setup()
   require("mason-lspconfig").setup({
-    ensure_installed = { "pyright", "rust_analyzer", "tsserver", "rubocop", "solc", "marksman", "gopls" },
+    ensure_installed = { "pyright", "rust_analyzer", "tsserver", "rubocop", "solc", "marksman", "gopls", "yamlls", "lua_ls" },
   })
 
   local lspconfig = require('lspconfig')
   local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
   lspconfig.lua_ls.setup({
     capabilities = lsp_capabilities,
+    settings = {
+      Lua = {
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = {'vim'},
+        },
+      },
+    },
   })
 
   lspconfig.pyright.setup({ capabilities = lsp_capabilities, })
@@ -151,6 +159,19 @@ lua << EOF
   lspconfig.tsserver.setup({ capabilities = lsp_capabilities, })
   lspconfig.marksman.setup({ capabilities = lsp_capabilities, })
   lspconfig.gopls.setup({ capabilities = lsp_capabilities, })
+  lspconfig.yamlls.setup({
+    capabilities = lsp_capabilities,
+    settings = {
+      yaml = {
+        schemas = {
+          kubernetes = "*.yaml",
+          ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+          ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+          ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
+        },
+      }
+    }
+  })
 
   vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
   require('luasnip.loaders.from_vscode').lazy_load()
@@ -168,8 +189,8 @@ lua << EOF
       end
     },
     sources = {
-      {name = 'luasnip', max_item_count = 5, keyword_length = 2},
-      {name = 'nvim_lsp', max_item_count = 5, keyword_length = 2},
+      {name = 'luasnip', max_item_count = 7, keyword_length = 2},
+      {name = 'nvim_lsp', max_item_count = 7, keyword_length = 2},
       {name = 'buffer', max_item_count = 5, keyword_length = 2},
       {name = 'path', max_item_count = 3, keyword_length = 2},
     },
