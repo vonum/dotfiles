@@ -64,3 +64,14 @@ o.swapfile = false
 o.errorbells = false
 o.visualbell = false
 o.belloff = "all"
+
+-- Backspace will delete EOL chars, as well as indents
+o.backspace = "indent,eol,start"
+
+-- Remove white space at the end of the line
+vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
+
+vim.cmd([[
+  au BufRead,BufNewFile *.md setlocal textwidth=80
+  au BufRead,BufNewFile *.md setlocal colorcolumn=+1
+]])

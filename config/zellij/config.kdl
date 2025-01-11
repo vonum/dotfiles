@@ -147,7 +147,9 @@ keybinds {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
-        bind "Alt n" { NewPane; }
+        bind "Ctrl x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "Alt n" { NewPane "Right"; }
+        bind "Alt m" { NewPane "Down"; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt j" "Alt Down" { MoveFocus "Down"; }
@@ -156,6 +158,7 @@ keybinds {
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+        bind "Alt space" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "Alt f" {
           LaunchPlugin "filepicker" {
             floating true // uncomment this to have the filepicker opened in a floating window

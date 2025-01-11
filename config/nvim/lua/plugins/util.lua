@@ -28,4 +28,33 @@ return {
       ]])
     end
   },
+  {
+    "tpope/vim-projectionist",
+    config = function()
+      vim.g.projectionist_heuristics = {
+        ["*"] = {
+          ["*.go"] = {
+            alternate = "{}_test.go",
+          },
+          ["*_test.go"] = {
+            alternate = "{}.go",
+          },
+          ["src/*.sol"] = {
+            alternate = "test/{}.t.sol",
+          },
+          ["test/*.t.sol"] = {
+            alternate = "src/{}.sol",
+          },
+          ["*.py"] = {
+            alternate = "tests/{dirname}/test_{basename}.py",
+          },
+          ["tests/**/test_*.py"] = {
+            alternate = "{}.py",
+          },
+        },
+      }
+      vim.keymap.set("n", "<leader>s", ":A<cr>", { silent = true })
+      vim.keymap.set("n", "<leader>S", ":AV<cr>", { silent = true })
+    end,
+  },
 }

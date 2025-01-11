@@ -18,6 +18,7 @@ return {
       "toml",
       "json",
       "yaml",
+      "kdl"
     },
     sync_install = true,
     auto_install = true,
