@@ -1,5 +1,4 @@
 return {
-  -- "EdenEast/nightfox.nvim",
   "rose-pine/neovim",
   name = "rose-pine",
   lazy = false, -- make sure we load this during startup if it is your main colorscheme

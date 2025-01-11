@@ -45,7 +45,7 @@ return {
             "",
         },
         center = {
-          { action = "PlugInstall", desc = "Install Plugins", icon = "󰊳 ", key = "u" },
+          { action = "Lazy! sync", desc = "Install Plugins", icon = "󰊳 ", key = "u" },
           { action = "NvimTreeToggle", desc = "File Explorer", icon = "⽊ ", key = "e" },
           { action = "ene | startinsert", desc = "New File", icon = " ", key = "n" },
           { action = "Telescope find_files", desc = "Find File", icon = " ", key = "f" },

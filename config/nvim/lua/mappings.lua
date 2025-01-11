@@ -30,3 +30,6 @@ vim.keymap.set("x", "=", "=gv")
 
 -- Clear search highlighting
 vim.keymap.set("n", "<leader><cr>", ":nohl<cr>", { silent = true })
+
+-- Update lazy plugins
+vim.keymap.set("n", "<leader>1", ":Lazy! sync<cr>", { silent = true })
