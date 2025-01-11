@@ -25,16 +25,43 @@ return {
     local lspconfig = require("lspconfig")
     local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    lspconfig.pyright.setup({ capabilities = lsp_capabilities, })
-    lspconfig.rust_analyzer.setup({ capabilities = lsp_capabilities, })
-    lspconfig.solc.setup({ capabilities = lsp_capabilities, })
-    lspconfig.rubocop.setup({ capabilities = lsp_capabilities, })
-    lspconfig.ts_ls.setup({ capabilities = lsp_capabilities, })
-    lspconfig.marksman.setup({ capabilities = lsp_capabilities, })
-    lspconfig.gopls.setup({ capabilities = lsp_capabilities, })
+    local handlers = {
+      ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded"}),
+      ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded"}),
+    }
+
+    lspconfig.pyright.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
+    lspconfig.rust_analyzer.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
+    lspconfig.solc.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
+    lspconfig.rubocop.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
+    lspconfig.ts_ls.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
+    lspconfig.marksman.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
+    lspconfig.gopls.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
 
     lspconfig.lua_ls.setup({
       capabilities = lsp_capabilities,
+      handlers = handlers,
       settings = {
         Lua = {
           diagnostics = {
@@ -47,6 +74,7 @@ return {
 
     lspconfig.yamlls.setup({
       capabilities = lsp_capabilities,
+      handlers = handlers,
       settings = {
         yaml = {
           schemas = {
