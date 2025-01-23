@@ -37,3 +37,9 @@ alias orusapi="cd ~/code/orus/orus-api"
 alias orusmeta="cd ~/code/orus/metadata-api"
 alias orusinflux="cd ~/code/orus/local-influx"
 alias orusweb="cd ~/code/orus/orus-web"
+
+alias python="python3"
+
+## twinstake
+alias asl="aws sso login"
+alias twinstake="cd ~/code/twinstake/"

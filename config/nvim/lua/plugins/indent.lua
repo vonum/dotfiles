@@ -6,9 +6,9 @@ return {
       char = "¦",
     },
     scope = {
-      enabled = true,
+      enabled = false,
       show_start = false,
-      show_exact_scope = true,
+      show_exact_scope = false,
     },
     exclude = {
       filetypes = {
