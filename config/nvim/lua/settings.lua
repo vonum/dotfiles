@@ -50,8 +50,8 @@ o.incsearch = true  -- Incremental search
 o.ignorecase = true -- Searches are non case-sensitive
 o.smartcase = true  -- Search is case-sensitive if there is at least one capitalized letter
 
-o.showmatch = true   -- Shows matching brackets when text indicator is over them
-o.scrolloff = 5      -- Show 5 lines of context around the cursor
+o.showmatch = true  -- Shows matching brackets when text indicator is over them
+o.scrolloff = 5     -- Show 5 lines of context around the cursor
 o.sidescrolloff = 20
 o.scrolljump = 10
 

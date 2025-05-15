@@ -6,7 +6,7 @@ return {
       "L3MON4D3/LuaSnip",
       dependencies = {
         "rafamadriz/friendly-snippets",
-        config = function ()
+        config = function()
           require("luasnip.loaders.from_vscode").lazy_load()
         end
       }
@@ -18,13 +18,13 @@ return {
     "hrsh7th/cmp-calc",
     "saadparwaiz1/cmp_luasnip"
   },
-  config = function ()
-    vim.opt.completeopt = {"menu", "menuone", "noselect"}
+  config = function()
+    vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
-    local select_opts = {behavior = cmp.SelectBehavior.Select}
+    local select_opts = { behavior = cmp.SelectBehavior.Select }
 
     cmp.setup({
       snippet = {
@@ -33,17 +33,17 @@ return {
         end
       },
       sources = {
-        {name = "luasnip", max_item_count = 7, keyword_length = 2},
-        {name = "nvim_lsp", max_item_count = 7, keyword_length = 2},
-        {name = "buffer", max_item_count = 5, keyword_length = 2},
-        {name = "path", max_item_count = 3, keyword_length = 2},
+        { name = "luasnip",  max_item_count = 7, keyword_length = 2 },
+        { name = "nvim_lsp", max_item_count = 7, keyword_length = 2 },
+        { name = "buffer",   max_item_count = 5, keyword_length = 2 },
+        { name = "path",     max_item_count = 3, keyword_length = 2 },
       },
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered()
       },
       formatting = {
-        fields = {"menu", "abbr", "kind"},
+        fields = { "menu", "abbr", "kind" },
         format = function(entry, item)
           local menu_icon = {
             luasnip = "⋗",
@@ -58,8 +58,8 @@ return {
       },
       mapping = {
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<C-y>"] = cmp.mapping.confirm({select = true}),
-        ["<CR>"] = cmp.mapping.confirm({select = false}),
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
 
         -- scroll docs window
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -75,7 +75,7 @@ return {
           else
             cmp.complete()
           end
-        end, {"i", "s"}),
+        end, { "i", "s" }),
 
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -83,7 +83,7 @@ return {
           else
             fallback()
           end
-        end, {"i", "s"}),
+        end, { "i", "s" }),
       },
     })
   end

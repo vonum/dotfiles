@@ -1,40 +1,50 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    { "williamboman/mason.nvim", opts = {}},
+    { "williamboman/mason.nvim", opts = {} },
     {
       "williamboman/mason-lspconfig.nvim",
       opts = {
         ensure_installed = {
+          "lua_ls",
+          "gopls",
           "pyright",
           "rust_analyzer",
+          "elixirls",
           "ts_ls",
-          "rubocop",
+          -- "rubocop",
           "solc",
           "marksman",
-          "gopls",
           "yamlls",
-          "lua_ls",
+          "terraformls",
         }
       },
-      dependencies = {"williamboman/mason.nvim"}
+      dependencies = { "williamboman/mason.nvim" }
     },
     "hrsh7th/cmp-nvim-lsp",
   },
-  config = function ()
+  config = function()
     local lspconfig = require("lspconfig")
     local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local handlers = {
-      ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded"}),
-      ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded"}),
+      ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+      ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
     }
 
+    lspconfig.gopls.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
     lspconfig.pyright.setup({
       capabilities = lsp_capabilities,
       handlers = handlers
     })
     lspconfig.rust_analyzer.setup({
+      capabilities = lsp_capabilities,
+      handlers = handlers
+    })
+    lspconfig.elixirls.setup({
       capabilities = lsp_capabilities,
       handlers = handlers
     })
@@ -54,9 +64,15 @@ return {
       capabilities = lsp_capabilities,
       handlers = handlers
     })
-    lspconfig.gopls.setup({
+
+    lspconfig.terraformls.setup({
       capabilities = lsp_capabilities,
-      handlers = handlers
+      handlers = handlers,
+      init_options = {
+        terraform = {
+          path = "/opt/homebrew/bin/terraform"
+        }
+      }
     })
 
     lspconfig.lua_ls.setup({
@@ -66,7 +82,7 @@ return {
         Lua = {
           diagnostics = {
             -- Get the language server to recognize the `vim` global
-            globals = {'vim'},
+            globals = { 'vim' },
           },
         },
       },
@@ -81,7 +97,8 @@ return {
             kubernetes = "*.yaml",
             ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
             ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-            ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
+            ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] =
+            "*docker-compose*.{yml,yaml}",
           },
         }
       }
@@ -89,7 +106,7 @@ return {
 
     local custom_map = function(type, key, value)
       -- vim.api.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true})
-      vim.keymap.set(type, key, value, {noremap = true, silent = true})
+      vim.keymap.set(type, key, value, { noremap = true, silent = true })
     end
 
     custom_map("n", "<leader>gD", "<cmd> lua vim.lsp.buf.declaration()<cr>")
@@ -102,6 +119,6 @@ return {
     custom_map("n", "<leader>ar", "<cmd> lua vim.lsp.buf.rename()<cr>")
     custom_map("n", "<leader>gh", "<cmd> lua vim.lsp.buf.hover()<cr>")
     -- custom_map("n","<leader>er","<cmd> lua vim.lsp.util.show_line_diagnostics()<cr>")
-    custom_map("n","<leader>=", "<cmd> lua vim.lsp.buf.formatting()<cr>")
+    custom_map("n", "<leader>=", "<cmd> lua vim.lsp.buf.formatting()<cr>")
   end,
 }
