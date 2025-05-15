@@ -118,7 +118,7 @@ return {
     custom_map("n", "<leader>ao", "<cmd> lua vim.lsp.buf.outgoing_calls()<cr>")
     custom_map("n", "<leader>ar", "<cmd> lua vim.lsp.buf.rename()<cr>")
     custom_map("n", "<leader>gh", "<cmd> lua vim.lsp.buf.hover()<cr>")
-    -- custom_map("n","<leader>er","<cmd> lua vim.lsp.util.show_line_diagnostics()<cr>")
+    custom_map("n", "<leader>er", "<cmd> lua vim.diagnostic.open_float()<cr>")
     custom_map("n", "<leader>=", "<cmd> lua vim.lsp.buf.formatting()<cr>")
   end,
 }
