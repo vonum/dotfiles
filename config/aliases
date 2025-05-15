@@ -19,6 +19,7 @@ alias k="kubectl"
 alias clip="xclip -selection c"
 alias pp="python -m json.tool"
 alias poet="poetry run"
+alias myip="curl ifconfig.me"
 
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
@@ -43,3 +44,5 @@ alias python="python3"
 ## twinstake
 alias asl="aws sso login"
 alias twinstake="cd ~/code/twinstake/"
+alias dev-db="~/bin/dev-db.sh"
+alias prod-db="~/bin/prod-db.sh"

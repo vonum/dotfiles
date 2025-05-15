@@ -1,10 +1,9 @@
 return {
   "kyazdani42/nvim-tree.lua",
-  dependencies = {"nvim-tree/nvim-web-devicons"},
-  config = function ()
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
-    vim.opt.list = true
 
     require("nvim-tree").setup({
       view = {
