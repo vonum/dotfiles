@@ -23,8 +23,8 @@ if [ -d $HOME/bin ]; then
   export PATH=$PATH:$HOME/bin
 fi
 
-if [ -d $HOME/.gem.ruby/2.3.0 ]; then
-  export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
+if [ -x /opt/homebrew/bin/rbenv ]; then
+  eval "$(rbenv init - zsh)"
 fi
 
 export GOPATH=$HOME/go
@@ -40,6 +40,10 @@ fi
 
 if [ -d "/opt/homebrew/opt/openvpn/sbin/openvpn:$PATH" ]; then
 export PATH="/opt/homebrew/opt/openvpn/sbin/openvpn:$PATH"
+fi
+
+if [ -d $HOME/.cargo/bin ]; then
+  export PATH="$PATH:$HOME/.cargo/bin"
 fi
 
 if [ -d $HOME/.foudnry/bin ]; then
@@ -84,3 +88,19 @@ source <(kubectl completion zsh)
 # ssh
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
+
+open_tunnel_dev() {
+    echo "Opening tunnel"
+    ssh -f -N ec2-tunnel-dev
+}
+
+close_tunnel_dev() {
+  local pid
+  pid=$(lsof -Pi :5433 -sTCP:LISTEN -t)
+  if [ -n "$pid" ]; then
+    echo "Closing tunnel with PID $pid"
+    kill "$pid"
+  else
+    echo "No tunnel is running on port 5433"
+  fi
+}
