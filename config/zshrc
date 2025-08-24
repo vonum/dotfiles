@@ -50,10 +50,20 @@ if [ -d $HOME/.foudnry/bin ]; then
   export PATH="$PATH:$HOME/.foundry/bin"
 fi
 
+if [ -d $HOME/.pyenv ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
+fi
+
 # Spaceship + autocompletion setup
 bindkey '^ ' autosuggest-accept # CTRL + SPACE
 # bindkey '^M' autosuggest-execute # CTRL + ENTER
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
+
+source ~/.aliases
+source $ZSH/oh-my-zsh.sh
+source <(kubectl completion zsh)
 
 plugins=(
   zsh-autosuggestions
