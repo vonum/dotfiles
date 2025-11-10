@@ -1,9 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    { "williamboman/mason.nvim", opts = {} },
+    { "mason-org/mason.nvim", opts = {} },
     {
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason-lspconfig.nvim",
       opts = {
         ensure_installed = {
           "lua_ls",
@@ -19,7 +19,7 @@ return {
           "terraformls",
         }
       },
-      dependencies = { "williamboman/mason.nvim" }
+      dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" }
     },
     "hrsh7th/cmp-nvim-lsp",
   },
@@ -38,7 +38,10 @@ return {
     })
     lspconfig.pyright.setup({
       capabilities = lsp_capabilities,
-      handlers = handlers
+      handlers = handlers,
+      python = {
+        pythonPath = vim.fn.trim(vim.fn.system("uv run which python")),
+      },
     })
     lspconfig.rust_analyzer.setup({
       capabilities = lsp_capabilities,
@@ -118,7 +121,7 @@ return {
     custom_map("n", "<leader>ao", "<cmd> lua vim.lsp.buf.outgoing_calls()<cr>")
     custom_map("n", "<leader>ar", "<cmd> lua vim.lsp.buf.rename()<cr>")
     custom_map("n", "<leader>gh", "<cmd> lua vim.lsp.buf.hover()<cr>")
-    custom_map("n", "<leader>er", "<cmd> lua vim.diagnostic.open_float()<cr>")
+    -- custom_map("n", "<leader>er", "<cmd> lua vim.diagnostic.open_float()<cr>")
     custom_map("n", "<leader>=", "<cmd> lua vim.lsp.buf.formatting()<cr>")
   end,
 }
