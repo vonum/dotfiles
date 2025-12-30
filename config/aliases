@@ -6,43 +6,44 @@ alias timeout="gtimeout"
 alias src="source"
 alias rip="rm -rf"
 alias zz="source ~/.zshrc"
-alias v="nvim"
-alias g="git"
+alias code="cd ~/code"
+alias kek="echo 'pls'"
+
 alias ll="ls -lah"
 alias grp="grep -rni"
 alias password="openssl rand -base64 32"
-alias code="cd ~/code"
 alias pr="hub pull-request"
-alias kek="echo 'kek'"
-alias dc="docker-compose"
-alias k="kubectl"
 alias clip="xclip -selection c"
 alias pp="python -m json.tool"
-alias poet="poetry run"
 alias myip="curl ifconfig.me"
+
+alias v="nvim"
+alias g="git"
+
+alias tf="terraform"
+alias hh="npx hardhat"
+alias dc="docker compose"
+alias k="kubectl"
 
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
 alias ii="iex -S mix"
 
-# jupyter notebook
-alias jup="jupyter notebook"
-
-alias tf="terraform"
-alias hh="npx hardhat"
-
-## orus
-alias orus="cd ~/code/orus"
-alias orusjobs="cd ~/code/orus/jobs"
-alias orusapi="cd ~/code/orus/orus-api"
-alias orusmeta="cd ~/code/orus/metadata-api"
-alias orusinflux="cd ~/code/orus/local-influx"
-alias orusweb="cd ~/code/orus/orus-web"
-
+# python
 alias python="python3"
+alias jup="jupyter notebook"
+alias poet="poetry run"
 
 ## twinstake
 alias asl="aws sso login"
 alias twinstake="cd ~/code/twinstake/"
 alias dev-db="~/bin/dev-db.sh"
 alias prod-db="~/bin/prod-db.sh"
+alias testnet-db="~/bin/testnet-db.sh"
+
+alias dev-db-creds="aws secretsmanager get-secret-value --secret-id development/apps/api/postgres/user --region eu-west-1 --query 'SecretString' --output text"
+alias prod-db-creds="aws secretsmanager get-secret-value --profile data-prod --secret-id production/apps/api/postgres/user --region eu-west-1 --query 'SecretString' --output text"
+alias testnet-db-creds="aws secretsmanager get-secret-value --profile data-prod --secret-id testnet/apps/api/postgres/user --region eu-west-1 --query 'SecretString' --output text"
+
+alias tslocal='curl -H "Authorization: Bearer ${LOCAL_AUTH_TOKEN}"'
+alias awslocal="aws --profie local"

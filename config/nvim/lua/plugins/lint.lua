@@ -11,7 +11,7 @@ return {
       go = { "golangcilint" },
       javascript = { "eslint_d" },
       typescript = { "eslint_d" },
-      python = { "pylint" },
+      -- python = { "pylint" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

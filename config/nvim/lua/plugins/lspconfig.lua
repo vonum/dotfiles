@@ -37,6 +37,12 @@ return {
       handlers = handlers
     })
     lspconfig.pyright.setup({
+      on_init = function(client)
+        local poetry_env = vim.fn.trim(vim.fn.system("poetry env info -p"))
+        client.config.settings.python.pythonPath = poetry_env .. "/bin/python"
+        client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+        return true
+      end,
       capabilities = lsp_capabilities,
       handlers = handlers,
       python = {

@@ -56,6 +56,10 @@ if [ -d $HOME/.pyenv ]; then
   eval "$(pyenv init --path)"
 fi
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # Spaceship + autocompletion setup
 bindkey '^ ' autosuggest-accept # CTRL + SPACE
 # bindkey '^M' autosuggest-execute # CTRL + ENTER
@@ -114,3 +118,4 @@ close_tunnel_dev() {
     echo "No tunnel is running on port 5433"
   fi
 }
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"

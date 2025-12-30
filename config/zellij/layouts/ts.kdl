@@ -1,0 +1,27 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+    }
+    tab name="work" {
+        pane cwd="$HOME/code/twinstake/"
+    }
+    tab name="local env" focus=true {
+        pane split_direction="vertical" {
+            pane {
+                name "local apis"
+                command "make"
+                args "run_local_apis"
+                cwd "$HOME/code/twinstake/twinstake-api/cdk/"
+            }
+            pane {
+                name "local infra"
+                command "docker"
+                args "compose" "up"
+                cwd "$HOME/code/twinstake/apps-local-env/"
+            }
+        }
+    }
+}
