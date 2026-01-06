@@ -1,10 +1,10 @@
 return {
-  {"tpope/vim-repeat"},
-  {"tpope/vim-commentary"},
-  {"cohama/lexima.vim"},
+  { "tpope/vim-repeat" },
+  { "tpope/vim-commentary" },
+  { "cohama/lexima.vim" },
   {
     "bkad/CamelCaseMotion",
-    config = function ()
+    config = function()
       vim.cmd([[
         map ,w <Plug>CamelCaseMotion_w
         map ,b <Plug>CamelCaseMotion_b
@@ -18,8 +18,8 @@ return {
   {
     "janko/vim-test",
     keys = {
-      {"<leader>'", "<cmd>TestFile<cr>", desc = "Run module tests."},
-      {"<leader>;", "<cmd>TestNearest<cr>", desc = "Run single test"},
+      { "<leader>'", "<cmd>TestFile<cr>",    desc = "Run module tests." },
+      { "<leader>;", "<cmd>TestNearest<cr>", desc = "Run single test" },
     },
     config = function()
       vim.cmd([[
