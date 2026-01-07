@@ -33,3 +33,7 @@ vim.keymap.set("n", "<leader><cr>", ":nohl<cr>", { silent = true })
 
 -- Update lazy plugins
 vim.keymap.set("n", "<leader>1", ":Lazy! sync<cr>", { silent = true })
+
+-- Disable default s key
+vim.keymap.set("n", "s", "<Nop>")
+vim.keymap.set("x", "s", "<Nop>")

@@ -57,4 +57,18 @@ return {
       vim.keymap.set("n", "<leader>S", ":AV<cr>", { silent = true })
     end,
   },
+  {
+    "nvim-mini/mini.surround",
+    version = "*",
+    opts = {
+      mappings = {
+        add = "sa",
+        delete = "sd",
+        replace = "sr",
+        find = "sf",
+        find_left = "sF",
+        highlight = "sh",
+      },
+    },
+  }
 }

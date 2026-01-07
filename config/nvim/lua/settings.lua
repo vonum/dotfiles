@@ -68,6 +68,18 @@ o.belloff = "all"
 -- Backspace will delete EOL chars, as well as indents
 o.backspace = "indent,eol,start"
 
+-- Folding
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldenable = true
+o.foldtext = ""
+o.foldcolumn = "0"
+
+-- Issue with folding not working in a new buffer, force recompute and open folds
+vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx", })
+
 -- Remove white space at the end of the line
 vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
 
