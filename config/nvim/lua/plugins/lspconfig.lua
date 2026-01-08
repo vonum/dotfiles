@@ -17,7 +17,8 @@ return {
           "marksman",
           "yamlls",
           "terraformls",
-        }
+        },
+        automatic_enable = false,
       },
       dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" }
     },
@@ -45,9 +46,9 @@ return {
       end,
       capabilities = lsp_capabilities,
       handlers = handlers,
-      python = {
-        pythonPath = vim.fn.trim(vim.fn.system("uv run which python")),
-      },
+      -- python = {
+      --   pythonPath = vim.fn.trim(vim.fn.system("uv run which python")),
+      -- },
     })
     lspconfig.rust_analyzer.setup({
       capabilities = lsp_capabilities,
@@ -91,7 +92,7 @@ return {
         Lua = {
           diagnostics = {
             -- Get the language server to recognize the `vim` global
-            globals = { 'vim' },
+            globals = { "vim" },
           },
         },
       },
@@ -113,21 +114,35 @@ return {
       }
     })
 
-    local custom_map = function(type, key, value)
-      -- vim.api.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true})
-      vim.keymap.set(type, key, value, { noremap = true, silent = true })
-    end
+    -- local custom_map = function(type, key, value)
+    --   -- vim.api.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true})
+    --   vim.keymap.set(type, key, value, { noremap = true, silent = true })
+    -- end
+    -- custom_map("n", "<leader>=", "<cmd> lua vim.lsp.buf.formatting()<cr>")
 
-    custom_map("n", "<leader>gD", "<cmd> lua vim.lsp.buf.declaration()<cr>")
-    custom_map("n", "<leader>gd", "<cmd> lua vim.lsp.buf.definition()<cr>")
-    custom_map("n", "<leader>gi", "<cmd> lua vim.lsp.buf.implementation()<cr>")
-    custom_map("n", "<leader>gt", "<cmd> lua vim.lsp.buf.type_definition()<cr>")
-    custom_map("n", "<leader>gr", "<cmd> lua vim.lsp.buf.references()<cr>")
-    custom_map("n", "<leader>ai", "<cmd> lua vim.lsp.buf.incoming_calls()<cr>")
-    custom_map("n", "<leader>ao", "<cmd> lua vim.lsp.buf.outgoing_calls()<cr>")
-    custom_map("n", "<leader>ar", "<cmd> lua vim.lsp.buf.rename()<cr>")
-    custom_map("n", "<leader>gh", "<cmd> lua vim.lsp.buf.hover()<cr>")
-    -- custom_map("n", "<leader>er", "<cmd> lua vim.diagnostic.open_float()<cr>")
-    custom_map("n", "<leader>=", "<cmd> lua vim.lsp.buf.formatting()<cr>")
+    vim.api.nvim_create_autocmd('LspAttach', {
+      desc = 'LSP actions',
+      callback = function()
+        local bufmap = function(mode, lhs, rhs)
+          local opts = { buffer = true }
+          vim.keymap.set(mode, lhs, rhs, opts)
+        end
+
+        bufmap('n', 'K', vim.lsp.buf.hover)
+        bufmap('n', 'gd', vim.lsp.buf.definition)
+        bufmap('n', 'gD', vim.lsp.buf.declaration)
+        bufmap('n', 'gi', vim.lsp.buf.implementation)
+        bufmap('n', 'gt', vim.lsp.buf.type_definition)
+
+        bufmap('n', 'gr', vim.lsp.buf.references)
+        bufmap('n', 'gs', vim.lsp.buf.signature_help)
+        bufmap("n", "gai", vim.lsp.buf.incoming_calls)
+        bufmap("n", "gao", vim.lsp.buf.outgoing_calls)
+
+        bufmap('n', 'gl', vim.diagnostic.open_float)
+        bufmap('n', '[d', vim.diagnostic.goto_prev)
+        bufmap('n', ']d', vim.diagnostic.goto_next)
+      end
+    })
   end,
 }
