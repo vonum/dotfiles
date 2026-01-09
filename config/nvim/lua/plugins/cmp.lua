@@ -70,11 +70,17 @@ return {
 
           if cmp.visible() then
             cmp.select_next_item(select_opts)
-          elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-            fallback()
           else
-            cmp.complete()
+            fallback()
           end
+
+          -- if cmp.visible() then
+          --   cmp.select_next_item(select_opts)
+          -- elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
+          --   fallback()
+          -- else
+          --   cmp.complete()
+          -- end
         end, { "i", "s" }),
 
         ["<S-Tab>"] = cmp.mapping(function(fallback)

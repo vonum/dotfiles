@@ -16,6 +16,7 @@ return {
         "elixir",
         "sql",
         "markdown",
+        "markdown_inline",
         "typescript",
         "javascript",
         "toml",
