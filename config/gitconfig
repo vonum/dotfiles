@@ -24,6 +24,7 @@
   stad  = stash drop
   rb    = rebase
   f     = fetch
+  rs    = restore --staged
   undo  = reset --soft HEAD^
   redo  = git reset 'HEAD@{1}'
   count = !git shortlog -sne
