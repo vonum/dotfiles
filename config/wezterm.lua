@@ -30,4 +30,27 @@ config.background = {
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
 
+config.keys = {
+	{
+		key = "RightArrow",
+		mods = "OPT",
+		action = wezterm.action.SendString("\x1bf"), -- forward one word
+	},
+	{
+		key = "LeftArrow",
+		mods = "OPT",
+		action = wezterm.action.SendString("\x1bb"), -- back one word
+	},
+	{
+		key = "RightArrow",
+		mods = "SHIFT|OPT",
+		action = wezterm.action.SendString("\x05"), -- end of line
+	},
+	{
+		key = "LeftArrow",
+		mods = "SHIFT|OPT",
+		action = wezterm.action.SendString("\x01"), -- beginning of line
+	},
+}
+
 return config
