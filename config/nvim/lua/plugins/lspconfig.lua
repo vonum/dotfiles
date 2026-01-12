@@ -39,36 +39,13 @@ return {
 		vim.lsp.enable("gopls")
 
 		vim.lsp.config.pyright = {
-			-- on_init = function(client)
-			--   local poetry_env = vim.fn.trim(vim.fn.system("poetry env info -p"))
-			--   client.config.settings.python.pythonPath = poetry_env .. "/bin/python"
-			--   client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-			--   return true
-			-- end,
 			capabilities = lsp_capabilities,
 			handlers = handlers,
-			-- python = {
-			--   pythonPath = vim.fn.trim(vim.fn.system("uv run which python")),
-			-- },
-			python = {
-				pythonPath = function()
-					local function cmd(cmd)
-						local out = vim.fn.system(cmd)
-						return vim.v.shell_error == 0 and vim.fn.trim(out) or nil
-					end
-
-					local poetry = cmd("poetry env info -p")
-					if poetry and poetry ~= "" then
-						return poetry .. "/bin/python"
-					end
-
-					local uv = cmd("uv run which python")
-					if uv and uv ~= "" then
-						return uv
-					end
-
-					return vim.fn.exepath("python3") or "python"
-				end,
+			-- Expect .venv to be in project
+			settings = {
+				python = {
+					pythonPath = vim.fn.getcwd() .. "/.venv/bin/python",
+				},
 			},
 		}
 		vim.lsp.enable("pyright")

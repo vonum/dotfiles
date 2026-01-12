@@ -64,7 +64,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# Spaceship + autocompletion setup
+# Plugins
 plugins=(
   docker
   docker-compose
@@ -74,10 +74,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-source ~/.aliases
-source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
-
 bindkey '^ ' autosuggest-execute # CTRL + SPACE
 # bindkey '^ ' autosuggest-accept
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
@@ -85,17 +81,20 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=243'
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
+# Prompt
 SPACESHIP_PROMPT_ORDER=(
   time
   user
   host
   dir
   git
-  docker
-  kubectl
+  rust
   golang
   ruby
   elixir
+  python
+  docker
+  kubectl
   jobs
   line_sep
   char

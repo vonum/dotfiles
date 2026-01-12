@@ -23,14 +23,23 @@ config.background = {
 		},
 		horizontal_align = "Center",
 		vertical_align = "Middle",
-		opacity = 0.25,
+		opacity = 0.4,
 	},
 }
 
-config.check_for_updates = true
-config.check_for_updates_interval_seconds = 86400
+config.window_padding = {
+	bottom = 3,
+	top = 3,
+	left = 3,
+	right = 3,
+}
 
 config.keys = {
+	{
+		key = "m",
+		mods = "OPT",
+		action = wezterm.action.ToggleFullScreen,
+	},
 	{
 		key = "RightArrow",
 		mods = "OPT",
@@ -52,5 +61,8 @@ config.keys = {
 		action = wezterm.action.SendString("\x01"), -- beginning of line
 	},
 }
+
+config.check_for_updates = true
+config.check_for_updates_interval_seconds = 86400
 
 return config
