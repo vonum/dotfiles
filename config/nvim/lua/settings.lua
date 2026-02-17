@@ -30,7 +30,7 @@ o.guicursor = "a:ver25"
 o.clipboard = "unnamed"
 
 -- Formatting options
-o.wrap = true      -- Soft wrap
+o.wrap = true -- Soft wrap
 o.linebreak = true -- Maintain word when wrapping
 
 -- Indentation
@@ -45,13 +45,13 @@ o.softtabstop = 2
 o.expandtab = true
 
 -- Sane search options
-o.hlsearch = true   -- Highlight search
-o.incsearch = true  -- Incremental search
+o.hlsearch = true -- Highlight search
+o.incsearch = true -- Incremental search
 o.ignorecase = true -- Searches are non case-sensitive
-o.smartcase = true  -- Search is case-sensitive if there is at least one capitalized letter
+o.smartcase = true -- Search is case-sensitive if there is at least one capitalized letter
 
-o.showmatch = true  -- Shows matching brackets when text indicator is over them
-o.scrolloff = 5     -- Show 5 lines of context around the cursor
+o.showmatch = true -- Shows matching brackets when text indicator is over them
+o.scrolloff = 5 -- Show 5 lines of context around the cursor
 o.sidescrolloff = 20
 o.scrolljump = 10
 
@@ -78,7 +78,7 @@ o.foldtext = ""
 o.foldcolumn = "0"
 
 -- Issue with folding not working in a new buffer, force recompute and open folds
-vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx", })
+vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx" })
 
 -- Remove white space at the end of the line
 vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
@@ -87,3 +87,11 @@ vim.cmd([[
   au BufRead,BufNewFile *.md setlocal textwidth=80
   au BufRead,BufNewFile *.md setlocal colorcolumn=+1
 ]])
+
+-- Enable spell checking for Markdown and plain text files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "text" },
+	callback = function()
+		vim.opt_local.spell = true
+	end,
+})
