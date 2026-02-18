@@ -37,3 +37,6 @@ vim.keymap.set("n", "<leader>1", ":Lazy! sync<cr>", { silent = true })
 -- Disable default s key
 vim.keymap.set("n", "s", "<Nop>")
 vim.keymap.set("x", "s", "<Nop>")
+
+-- Fix spelling
+vim.keymap.set("n", "<leader>fs", "1z=", { silent = true })
