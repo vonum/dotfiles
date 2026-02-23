@@ -22,6 +22,7 @@
   sta   = stash
   stap  = stash apply
   stad  = stash drop
+  stac  = stash clear
   rb    = rebase
   f     = fetch
   rs    = restore --staged

@@ -59,10 +59,6 @@ if [ -d $HOME/.pyenv ]; then
   eval "$(pyenv init -)"
 fi
 
-source $ZSH/oh-my-zsh.sh
-source <(fzf --zsh)
-source <(kubectl completion zsh)
-
 # ssh
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
@@ -105,6 +101,11 @@ SPACESHIP_PROMPT_ORDER=(
 
 export SPACESHIP_JOBS_COLOR="yellow"
 export LESS="FRX"
+
+source $ZSH/oh-my-zsh.sh
+source <(fzf --zsh)
+source <(kubectl completion zsh)
+
 
 open_tunnel_dev() {
     echo "Opening tunnel"

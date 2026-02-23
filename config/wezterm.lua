@@ -12,11 +12,12 @@ config.color_scheme = "kanagawabones"
 
 config.enable_tab_bar = true
 config.window_decorations = "INTEGRATED_BUTTONS"
+config.native_macos_fullscreen_mode = true
 
 config.default_cursor_style = "BlinkingBar"
 
 config.window_background_opacity = 0.9
-config.macos_window_background_blur = 15
+config.macos_window_background_blur = 20
 config.background = {
 	{
 		source = {
@@ -73,8 +74,17 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	}
 end)
 
+-- wezterm.on("resume-from-suspend", function(window, pane)
+-- 	for _, w in ipairs(wezterm.windows()) do
+-- 		for _, p in ipairs(w:panes()) do
+-- 			w:perform_action(wezterm.action.SendString("source ~/.zshrc\n"), p)
+-- 		end
+-- 	end
+-- end)
+
 config.keys = {
 	{ key = "m", mods = "OPT", action = wezterm.action.ToggleFullScreen },
+	{ key = "M", mods = "OPT", action = act.TogglePaneZoomState },
 	-- forward one word
 	{ key = "RightArrow", mods = "OPT", action = wezterm.action.SendString("\x1bf") },
 	-- back one word
@@ -93,14 +103,18 @@ config.keys = {
 	{ key = "k", mods = "OPT", action = act.ActivatePaneDirection("Up") },
 	{ key = "j", mods = "OPT", action = act.ActivatePaneDirection("Down") },
 
-	{ key = "M", mods = "OPT", action = act.TogglePaneZoomState },
 	{ key = "h", mods = "SHIFT|OPT", action = act.AdjustPaneSize({ "Left", 3 }) },
 	{ key = "l", mods = "SHIFT|OPT", action = act.AdjustPaneSize({ "Right", 3 }) },
 	{ key = "k", mods = "SHIFT|OPT", action = act.AdjustPaneSize({ "Up", 3 }) },
 	{ key = "j", mods = "SHIFT|OPT", action = act.AdjustPaneSize({ "Down", 3 }) },
+
+	-- move tabs
+	{ key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
+	{ key = "}", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) },
 }
 
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
+config.use_fancy_tab_bar = true
 
 return config
