@@ -17,6 +17,7 @@ return {
 					"marksman",
 					"yamlls",
 					"terraformls",
+					"svelte",
 				},
 				automatic_enable = false,
 			},
@@ -126,6 +127,12 @@ return {
 			},
 		}
 		vim.lsp.enable("yamlls")
+
+		vim.lsp.config.svelte = {
+			capabilities = lsp_capabilities,
+			handlers = handlers,
+		}
+		vim.lsp.enable("svelte")
 
 		-- local custom_map = function(type, key, value)
 		--   -- vim.api.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true})
